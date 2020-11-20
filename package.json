@@ -12,7 +12,8 @@
     "test:migrate:up": "knex --knexfile ./src/database/knexfile.ts migrate:latest --env testing",
     "test:migrate:down": "knex --knexfile ./src/database/knexfile.ts migrate:down --env testing",
     "generate:types": "graphql-codegen --config codegen.yml",
-    "test:seed-db": "knex --knexfile ./src/database/knexfile.ts seed:run --env testing"
+    "test:seed-db": "knex --knexfile ./src/database/knexfile.ts seed:run --env testing",
+    "seed-db": "knex --knexfile ./src/database/knexfile.ts seed:run"
   },
   "dependencies": {
     "apollo-server-express": "^2.16.1",

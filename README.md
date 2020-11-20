@@ -51,6 +51,7 @@ npm run dev
 | Testing     | `npm run test:migrate:up` | Run the Knex migration |
 | Testing     | `npm run test:seed-db` | Load test data into `post-test` DB |
 | Production  | `npm run migrate:up` | Run the Knex migration |
+| Production  | `npm run seed-db` | Load test data into `post` DB |
 
 4. Generate types:
 ```
