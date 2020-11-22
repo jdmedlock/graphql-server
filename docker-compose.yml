@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+
+  api:
+    image: node:14
+    restart: always
+    user: node
+    working_dir: /home/node/app
+    volumes:
+      - ./server:/home/node/app
+    ports:
+      - "3000:3000"
+    command: bash -c "npm i && npm run dev"
+    environment:
+      PGUSER: gqlserver
+      PGPASSWORD: root
+      PGHOST: db
+      PGDATABASE: gqlserver-prod
+      PGPORT: 5432
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: gqlserver
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: gqlserver-prod
+    volumes:
+      - "gqldata:/var/lib/postgresql/data"
+      - "./gqlserver_db.sql:/docker-entrypoint-initdb.d/gqlserver_db.sql"
+    ports:
+      - "5432:5432"
+
+volumes:
+  gqldata:
