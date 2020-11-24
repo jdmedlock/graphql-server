@@ -12,7 +12,7 @@ this
 It's purpose is to provide a place to test GraphQL techniques as well as the
 supporting technolgies and libraries like Data Loader & Objection.
 
-![Architecture Diagram](https://github.com/jdmedlock/graphql-server/blob/main/docs/graphql_server-architecture.png)
+![Architecture Diagram](https://github.com/jdmedlock/graphql-server/blob/main/docs/graphql_server_architecture.png)
 
 ## Installation & setup 
 
