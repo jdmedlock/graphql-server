@@ -4,8 +4,6 @@ services:
 
   api:
     image: node:14
-    build:
-      context: .
     restart: "no"
     user: node
     working_dir: /home/node/app
@@ -15,19 +13,19 @@ services:
       - "3000:3000"
     command: bash -c "npm i && npm run dev"
     environment:
-      PGUSER: gqlserver
-      PGPASSWORD: root
+      PGUSER: docker
+      PGPASSWORD: docker
       PGHOST: db
-      PGDATABASE: gqlserver-prod
+      PGDATABASE: docker
       PGPORT: 5432
 
   db:
     image: postgres
     restart: always
     environment:
-      POSTGRES_USER: gqlserver
-      POSTGRES_PASSWORD: root
-      POSTGRES_DB: gqlserver-prod
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: docker
     volumes:
       - "gqldata:/var/lib/postgresql/data"
       - "./gqlserver_db.sql:/docker-entrypoint-initdb.d/gqlserver_db.sql"
