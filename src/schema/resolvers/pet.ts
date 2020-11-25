@@ -1,4 +1,4 @@
-import { Pet, User } from "../../database/models";
+import { Pet } from "../../database/models";
 import { Resolvers } from "../../__generated__/generated-types";
 import { UserInputError } from "apollo-server-express";
 
@@ -11,7 +11,7 @@ const resolvers: Resolvers = {
     },
     pets: async (parent, args, ctx) => {
       const pets: Pet[] = await Pet.query();
-
+      console.log('resolvers pets: ', pets)
       return pets;
     },
   },
