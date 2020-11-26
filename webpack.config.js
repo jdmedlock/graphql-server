@@ -1,8 +1,7 @@
 const path = require('path');
 const {CheckerPlugin} = require('awesome-typescript-loader');
 var nodeExternals = require('webpack-node-externals');
-//nunca olvides de colocar target node en webpack
-//node externals pior el error de aws-sdk 
+
 module.exports ={
     entry: './src/index.ts',
     target:'node',

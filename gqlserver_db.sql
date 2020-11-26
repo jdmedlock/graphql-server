@@ -25,7 +25,7 @@ SET SESSION AUTHORIZATION 'postgres';
 -- Name: gqlserver-prod; Type: DATABASE; Schema: -; Owner: postgres
 --
 
-CREATE DATABASE "gqlserver-prod" WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'en_US.UTF-8' LC_CTYPE = 'en_US.UTF-8';
+-- CREATE DATABASE "gqlserver-prod" WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'en_US.UTF-8' LC_CTYPE = 'en_US.UTF-8';
 
 
 \connect -reuse-previous=on "dbname='gqlserver-prod'"
@@ -40,6 +40,16 @@ SET check_function_bodies = false;
 SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
+
+CREATE ROLE gqlserver WITH
+	LOGIN
+	NOSUPERUSER
+	CREATEDB
+	CREATEROLE
+	INHERIT
+	NOREPLICATION
+	CONNECTION LIMIT -1
+	PASSWORD 'root';
 
 SET SESSION AUTHORIZATION 'gqlserver';
 

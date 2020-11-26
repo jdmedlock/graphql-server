@@ -28,7 +28,7 @@ services:
       POSTGRES_DB: gqlserver-prod
     volumes:
       - "gqldata:/var/lib/postgresql/data"
-      - "./gqldata.sql:/docker-entrypoint-initdb.d/gqldata_db.sql"
+      - ./gqlserver_db.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"
 

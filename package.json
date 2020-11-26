@@ -4,12 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "reset-db": "docker container rm graphql-server_db_1 && docker container rm graphql-server_api_1 && docker volume rm graphql-server_gqldata",
     "start-db": "docker-compose up",
     "dev": "concurrently \" nodemon ./dist/bundle.js \" \" webpack --watch --config webpack.config.js\" ",
     "build": "webpack",
     "test:integration": "jest /src -c  jest.config.js --forceExit ",
     "start": "node /dist/bundle.js",
-    "reset-db": "docker container rm gqlserver_db && docker volume rm gqlserver_data",
     "dump-db": "docker exec gqlserver_db pg_dump -U docker docker > gqlserver_db.sql",
     "migrate:up": "knex --knexfile ./src/database/knexfile.ts migrate:latest ",
     "test:migrate:up": "knex --knexfile ./src/database/knexfile.ts migrate:latest --env testing",
