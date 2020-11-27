@@ -2,6 +2,11 @@
 
 A demonstration server for GraphQL experiments
 
+## Table of Contents
+
+* [Overview](#overview)
+* [Installation & setup](#installation-setup)
+
 ## Overview
 
 This project is a demonstration server for GraphQL experiments and is based on 
@@ -60,6 +65,20 @@ npm run dev
 npm run generate:types
 ```
 
+### Starting the Server
+
+There are two ways to start the server:
+
+1. As mentioned above, issue the `npm run dev` command from the terminal to
+start the server. This assumes that you have a PostgreSQL server started, 
+listening on port 5432, and data loaded into the test & production tables. 
+
+2. The second option is to issue the `npm run start-docker` command from the
+terminal to start both a PostgreSQL server and the GraphQL server in a Docker
+container. 
+
+Regardless of which of these methods you choose the way you connect to this
+server remains the same.
 ### Insomnia setup
 
 At this point you are ready to fire up the [Insomnia client](https://insomnia.rest/)
