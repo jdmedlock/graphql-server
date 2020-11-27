@@ -4,10 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "reset-db": "docker container rm graphql-server_db_1 && docker container rm graphql-server_api_1 && docker volume rm graphql-server_gqldata",
-    "start-db": "docker-compose up",
     "dev": "concurrently \" nodemon ./dist/bundle.js \" \" webpack --watch --config webpack.config.js\" ",
     "build": "webpack",
+    "reset-docker": "docker container rm graphql-server_db_1 && docker container rm graphql-server_api_1 && docker volume rm graphql-server_gqldata",
+    "start-docker": "docker-compose up",
     "test:integration": "jest /src -c  jest.config.js --forceExit ",
     "start": "node /dist/bundle.js",
     "dump-db": "docker exec gqlserver_db pg_dump -U docker docker > gqlserver_db.sql",
