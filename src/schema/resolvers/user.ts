@@ -42,7 +42,7 @@ const resolvers: Resolvers = {
     },
     deleteUser: async (parent, args, ctx) => {
       const deleted = await User.query().deleteById(args.id);
-      return "Succesfull deleted";
+      return "Succesfully deleted";
     },
   },
 };

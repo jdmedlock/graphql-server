@@ -1,8 +1,8 @@
 const default_config = {
   client: "pg",
   connection: {
-    database: "post",
-    user: "posttest",
+    database: "gqlserver-prod",
+    user: "postgres",
     password: "root",
   },
   pool: {
@@ -25,8 +25,8 @@ const config: KnexConfig = {
   testing: {
     ...default_config,
     connection: {
-      database: "post-test",
-      user: "posttest",
+      database: "gqlserver-test",
+      user: "postgres",
       password: "root",
     },
     pool: { min: 0, max: 10, idleTimeoutMillis: 500 },
