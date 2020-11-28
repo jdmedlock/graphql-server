@@ -18,8 +18,8 @@ type Pet {
     name: String
     owner_id: Int!
     specie: Species
-    created_at:String
-    owner:User
+    created_at: String
+    owner: User
 }
 
 input createUserInput{

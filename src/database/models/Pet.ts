@@ -4,13 +4,16 @@ import {Species,Maybe} from '../../__generated__/generated-types';
 import User from './User';
 
 class Pet extends Model{
-    static tableName = "pets";
     id! : number;
     name?: Maybe<string>;
     specie?: Maybe<Species>; 
     created_at?:string;
     owner_id!:number;
     owner?:User;
+
+    static get tableName() {
+        return 'pets';
+    }
 
     static jsonSchema ={
         type:'object',

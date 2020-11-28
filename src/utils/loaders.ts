@@ -4,7 +4,7 @@ import { Pet, User } from "../database/models";
 export const Pets: BatchLoadFn<number, Array<Pet>> = async (ids) => {
   const pets = await Pet.query();
 
-  return ids.map((i) => pets.filter((item) => item.owner_id === i));
+  return ids.map((id) => pets.filter((i) => i.owner_id === id));
 };
 
 export const Users: BatchLoadFn<number, Array<User>> = async (ids) => {
