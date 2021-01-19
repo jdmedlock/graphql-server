@@ -13,21 +13,21 @@ services:
       - "3000:3000"
     command: bash -c "npm i && npm run dev"
     environment:
-      PGUSER: posgres
-      PGPASSWORD: root
+      PGUSER: gqlserver
       PGHOST: db
       PGDATABASE: gqlserver-prod
+      PGPASSWORD: root
       PGPORT: 5432
 
   db:
     image: postgres
     restart: always
     environment:
-      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
+      POSTGRES_USER: gqlserver
       POSTGRES_DB: gqlserver-prod
     volumes:
-      - "gqldata:/var/lib/postgresql/data"
+      - ./gqldata:/var/lib/postgresql/data
       - ./gqlserver_db.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"

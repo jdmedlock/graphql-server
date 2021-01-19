@@ -18,7 +18,7 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
-SET SESSION AUTHORIZATION 'postgres';
+--SET SESSION AUTHORIZATION 'postgres';
 
 --
 -- TOC entry 3181 (class 1262 OID 17622)
@@ -28,34 +28,34 @@ SET SESSION AUTHORIZATION 'postgres';
 -- CREATE DATABASE "gqlserver-prod" WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'en_US.UTF-8' LC_CTYPE = 'en_US.UTF-8';
 
 
-\connect -reuse-previous=on "dbname='gqlserver-prod'"
+--\connect -reuse-previous=on "dbname='gqlserver-prod'"
 
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
+--SET statement_timeout = 0;
+--SET lock_timeout = 0;
+--SET idle_in_transaction_session_timeout = 0;
+--SET client_encoding = 'UTF8';
+--SET standard_conforming_strings = on;
+--SELECT pg_catalog.set_config('search_path', '', false);
+--SET check_function_bodies = false;
+--SET xmloption = content;
+--SET client_min_messages = warning;
+--SET row_security = off;
 
-CREATE ROLE gqlserver WITH
-	LOGIN
-	NOSUPERUSER
-	CREATEDB
-	CREATEROLE
-	INHERIT
-	NOREPLICATION
-	CONNECTION LIMIT -1
-	PASSWORD 'root';
+--CREATE ROLE gqlserver WITH
+--	LOGIN
+--	NOSUPERUSER
+--	CREATEDB
+--	CREATEROLE
+--	INHERIT
+--	NOREPLICATION
+--	CONNECTION LIMIT -1
+--	PASSWORD 'root';
 
-SET SESSION AUTHORIZATION 'gqlserver';
+--SET SESSION AUTHORIZATION 'gqlserver';
 
-SET default_tablespace = '';
+--SET default_tablespace = '';
 
-SET default_table_access_method = heap;
+--SET default_table_access_method = heap;
 
 --
 -- TOC entry 203 (class 1259 OID 17626)
@@ -362,7 +362,7 @@ ALTER TABLE ONLY public.pets
     ADD CONSTRAINT pets_owner_id_foreign FOREIGN KEY (owner_id) REFERENCES public.users(id) ON DELETE CASCADE;
 
 
-SET SESSION AUTHORIZATION 'postgres';
+--SET SESSION AUTHORIZATION 'postgres';
 
 --
 -- TOC entry 3182 (class 0 OID 0)
