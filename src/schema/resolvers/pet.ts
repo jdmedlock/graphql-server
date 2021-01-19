@@ -1,4 +1,4 @@
-import { Pet } from "../../database/models";
+import { Pet, User } from "../../database/models";
 import { Resolvers } from "../../__generated__/generated-types";
 import { UserInputError } from "apollo-server-express";
 
@@ -6,12 +6,10 @@ const resolvers: Resolvers = {
   Query: {
     pet: async (parent, args, ctx) => {
       const pet: Pet = await Pet.query().findById(args.id);
-
       return pet;
     },
     pets: async (parent, args, ctx) => {
       const pets: Pet[] = await Pet.query();
-      console.log('resolvers pets: ', pets)
       return pets;
     },
   },
@@ -20,6 +18,7 @@ const resolvers: Resolvers = {
       const {
         loaders: { users },
       } = ctx;
+<<<<<<< HEAD
       // TODO: The following return of an owner id is incorrect. It should between
       // returning an instance of type User as defined in the GraphQL schema
       // return users.load(parent.owner_id);
@@ -28,6 +27,10 @@ const resolvers: Resolvers = {
         full_name: "Test User",
         country_code: "01",
       }
+=======
+      const petOwner = await User.query().findById(parent.owner_id)
+      return petOwner
+>>>>>>> 5c5ad56a6a5df908fb57d8ec3a91511c3c1d3cdb
     },
   },
   Mutation: {
