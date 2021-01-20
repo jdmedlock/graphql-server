@@ -1,9 +1,9 @@
 const default_config = {
   client: "pg",
   connection: {
-    database: "gqlserver-prod",
-    user: "gqlserver",
-    password: "root",
+    database: process.env.POSTGRES_DB,
+    user: process.env.POSTGRES_USER,
+    password: process.env.POSTGRES_PASSWORD,
   },
   pool: {
     min: 2,
