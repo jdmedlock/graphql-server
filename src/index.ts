@@ -9,8 +9,12 @@ import DataLoader from "dataloader";
 import { Pets, Users } from "./utils/loaders";
 import Mock from "mock-knex";
 
-Model.knex(db);
+require('dotenv').config()
+console.log('POSTGRES_DB:', process.env.POSTGRES_DB)
+console.log('POSTGRES_USER:', process.env.POSTGRES_USER)
+console.log('POSTGRES_PASSWORD:', process.env.POSTGRES_PASSWORD)
 
+Model.knex(db);
 
 const app: Application = express();
 
