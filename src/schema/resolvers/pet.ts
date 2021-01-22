@@ -18,19 +18,8 @@ const resolvers: Resolvers = {
       const {
         loaders: { users },
       } = ctx;
-<<<<<<< HEAD
-      // TODO: The following return of an owner id is incorrect. It should between
-      // returning an instance of type User as defined in the GraphQL schema
-      // return users.load(parent.owner_id);
-      return {
-        id: 1, 
-        full_name: "Test User",
-        country_code: "01",
-      }
-=======
       const petOwner = await User.query().findById(parent.owner_id)
       return petOwner
->>>>>>> 5c5ad56a6a5df908fb57d8ec3a91511c3c1d3cdb
     },
   },
   Mutation: {
